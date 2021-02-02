@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 const carRouter = require('./controllers/carRoutes')
 app.use('/cars', carRouter)
-// const ownerRouter = require('./controllers/ownerRoutes')
-// app.use('/owners', ownerRouter)
+const ownerRouter = require('./controllers/ownerRoutes')
+app.use('/owners', ownerRouter)
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}!`))
