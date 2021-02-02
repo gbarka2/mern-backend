@@ -7,16 +7,28 @@ router.get('/', async (req, res) => {
   res.json(await Car.find({}))
 })
 
-router.get('/cars/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   res.json(await Car.find({_id: req.params.id}))
 })
 
-router.post('/cars', async (req, res) => {
+router.post('/', async (req, res) => {
   res.json(await Car.create(req.body))
 })
 
-router.put('/cars/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   res.json(await Car.findByIdAndUpdate(req.params.id, req.body, {new: true}))
 })
+
+// router.get('/cars/:id', async (req, res) => {
+//   res.json(await Car.find({_id: req.params.id}))
+// })
+
+// router.post('/cars', async (req, res) => {
+//   res.json(await Car.create(req.body))
+// })
+
+// router.put('/cars/:id', async (req, res) => {
+//   res.json(await Car.findByIdAndUpdate(req.params.id, req.body, {new: true}))
+// })
 
 module.exports = router
