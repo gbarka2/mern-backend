@@ -8,8 +8,8 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/cars/:id', async (req, res) => {
-  res.json(await Car.find({_id: req.params.id})
-})
+  res.json(await Car.find({_id: req.params.id}))
+}
 
 router.post('/cars', async (req, res) => {
   res.json(await Car.create(req.body))
