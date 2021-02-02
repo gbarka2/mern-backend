@@ -8,4 +8,9 @@ router.get('/', async (req, res) => {
   await Owner.findById({})
 })
 
+router.post('/', async (req, res) => {
+  res.json(await Owner.create(req.body))
+})
+
+
 module.exports = router
