@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   res.json(await Car.find({}))
 })
 
-router.post('/', async (req, res) => {
+router.post('/cars', async (req, res) => {
   res.json(await Car.create(req.body))
 })
 
