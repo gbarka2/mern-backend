@@ -5,7 +5,7 @@ const router = Router()
 const db = mongoose.connection
 
 router.get('/', async (req, res) => {
-  await Owner.find({})
+  res.json(await Owner.find({}))
 })
 
 router.post('/', async (req, res) => {
